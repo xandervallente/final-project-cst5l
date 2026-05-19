@@ -54,7 +54,11 @@ class AccountController {
     public function logout() {
         session_unset();
         session_destroy();
+<<<<<<< HEAD
         header("Location: /index.php");
+=======
+        header("Location: /finalProj/index.php");
+>>>>>>> e4dec0ef9980d0c2b0f4ee437a2879a1c762c628
         exit();
     }
 }

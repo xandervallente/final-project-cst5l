@@ -3,6 +3,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// Test database connection before anything else
+require_once __DIR__ . '/public/database.config.php';
+$test = @new mysqli($SERVER_NAME, $USERNAME, $PASSWORD, $DB_NAME, $PORT);
+if ($test->connect_error) {
+    die("DB Connection Failed: " . $test->connect_error);
+}
+$test->close();
+
 session_start();
 
 // Already logged in, go straight to dashboard

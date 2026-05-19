@@ -5,13 +5,10 @@
 //  Access via: http://localhost/finalProj/setup.php
 // ============================================================
 
-$SERVER_NAME = "localhost";
-$USERNAME    = "root";
-$PASSWORD    = "";
-$DB_NAME     = "inventory_system";
+require_once __DIR__ . '/public/database.config.php';
 
 // Connect without selecting a database first
-$conn = new mysqli($SERVER_NAME, $USERNAME, $PASSWORD);
+$conn = new mysqli($SERVER_NAME, $USERNAME, $PASSWORD, '', $PORT);
 
 if ($conn->connect_error) {
     die("<p style='color:red;'>Connection failed: " . $conn->connect_error . "</p>");

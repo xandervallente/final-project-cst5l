@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["register"])) {
 
     // Only proceed if no errors
     if (empty($errors)) {
-        $controller = new AccountController($SERVER_NAME, $USERNAME, $PASSWORD, $DB_NAME);
+        $controller = new AccountController($SERVER_NAME, $USERNAME, $PASSWORD, $DB_NAME, $PORT);
         if ($controller->register($form["username"], $form["password"])) {
             $success = "Account created successfully! You can now log in.";
             $form = ["username" => "", "password" => "", "confirm" => ""];

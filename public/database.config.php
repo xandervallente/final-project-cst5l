@@ -1,5 +1,6 @@
 <?php
 
+// Database Connection Configuration — reads Railway environment variables
 $SERVER_NAME = getenv('MYSQLHOST')     ?: getenv('DB_HOST')  ?: 'mysql.railway.internal';
 $USERNAME    = getenv('MYSQLUSER')     ?: getenv('DB_USER')  ?: 'root';
 $PASSWORD    = getenv('MYSQLPASSWORD') ?: getenv('DB_PASS')  ?: '';

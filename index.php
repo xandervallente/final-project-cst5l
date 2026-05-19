@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["login"])) {
 
     // Only attempt login if no validation errors
     if (empty($errors)) {
-        $controller = new AccountController($SERVER_NAME, $USERNAME, $PASSWORD, $DB_NAME);
+        $controller = new AccountController($SERVER_NAME, $USERNAME, $PASSWORD, $DB_NAME, $PORT);
         if ($controller->login($form["username"], $password)) {
             header("Location: /views/dashboard.php");
             exit();

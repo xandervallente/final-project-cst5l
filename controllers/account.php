@@ -3,8 +3,8 @@
 class AccountController {
     private $conn;
 
-    public function __construct($server, $username, $password, $dbname) {
-        $this->conn = new mysqli($server, $username, $password, $dbname, isset($GLOBALS["PORT"]) ? $GLOBALS["PORT"] : 3306);
+    public function __construct($server, $username, $password, $dbname, $port = 3306) {
+        $this->conn = new mysqli($server, $username, $password, $dbname, $port);
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
         }
@@ -54,11 +54,7 @@ class AccountController {
     public function logout() {
         session_unset();
         session_destroy();
-<<<<<<< HEAD
         header("Location: /index.php");
-=======
-        header("Location: /finalProj/index.php");
->>>>>>> e4dec0ef9980d0c2b0f4ee437a2879a1c762c628
         exit();
     }
 }

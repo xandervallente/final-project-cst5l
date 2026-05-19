@@ -1,0 +1,34 @@
+# Dependencies
+/vendor/
+composer.lock
+
+# Environment & config secrets
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & editor files
+.vscode/
+.idea/
+*.suo
+*.user
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+/logs/
+
+# Cache
+/cache/
+/tmp/
+
+# Uploaded user files (if any)
+/uploads/
+
+# XAMPP / local server files
+/phpmyadmin/

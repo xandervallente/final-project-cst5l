@@ -5,7 +5,6 @@ $SERVER_NAME = "mysql.railway.internal";
 $USERNAME = "root";
 $PASSWORD = "hiFlYLSCsHLQAGhrcFJflPLkVeZTqzxS";
 $DB_NAME = "railway";
-<<<<<<< HEAD
 $PORT = 3306;
 
 define('DB_HOST',    getenv('DB_HOST')    ?: 'localhost');

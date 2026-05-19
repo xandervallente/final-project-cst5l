@@ -5,6 +5,6 @@ RUN docker-php-ext-install mysqli pdo_mysql
 WORKDIR /app
 COPY . .
 
-RUN chmod +x /app/start.sh
+RUN printf '#!/bin/sh\nexec php -S 0.0.0.0:$PORT -t /app\n' > /start.sh && chmod +x /start.sh
 
-CMD ["/app/start.sh"]
+CMD ["/start.sh"]

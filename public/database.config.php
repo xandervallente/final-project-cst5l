@@ -1,7 +1,8 @@
 <?php
 
 // Database Connection Configuration
-$SERVER_NAME = "localhost";
+$SERVER_NAME = "mysql.railway.internal";
 $USERNAME = "root";
-$PASSWORD = "";
-$DB_NAME = "inventory_system";
+$PASSWORD = "hiFlYLSCsHLQAGhrcFJflPLkVeZTqzxS";
+$DB_NAME = "railway";
+$PORT = 3306;

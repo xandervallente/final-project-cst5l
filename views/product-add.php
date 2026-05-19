@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: /finalProj/index.php");
+    header("Location: /index.php");
     exit();
 }
 
@@ -87,8 +87,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["add_product"])) {
         <div class="alert alert-success">
             <p><?= htmlspecialchars($success) ?></p>
         </div>
-        <a href="/finalProj/views/products.php" class="btn btn-primary">View All Products</a>
-        <a href="/finalProj/views/product-add.php" class="btn btn-secondary">Add Another</a>
+        <a href="/views/products.php" class="btn btn-primary">View All Products</a>
+        <a href="/views/product-add.php" class="btn btn-secondary">Add Another</a>
     <?php else: ?>
         <form method="POST" novalidate>
             <label>Product Name: <span class="required">*</span></label>
@@ -107,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["add_product"])) {
 
             <div style="margin-top: 25px; display: flex; gap: 10px; align-items: center;">
                 <button type="submit" name="add_product" class="btn btn-success" style="margin:0; height:42px;">Add Product</button>
-                <a href="/finalProj/views/products.php" class="btn btn-secondary" style="margin:0; height:42px; display:inline-flex; align-items:center;">Cancel</a>
+                <a href="/views/products.php" class="btn btn-secondary" style="margin:0; height:42px; display:inline-flex; align-items:center;">Cancel</a>
             </div>
         </form>
     <?php endif; ?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: /finalProj/index.php");
+    header("Location: /index.php");
     exit();
 }
 
@@ -16,7 +16,7 @@ $id = $_GET["id"] ?? "";
 
 // Validate the ID from URL
 if (empty($id) || !ctype_digit($id)) {
-    header("Location: /finalProj/views/products.php");
+    header("Location: /views/products.php");
     exit();
 }
 
@@ -25,7 +25,7 @@ $product    = $controller->getOne((int)$id);
 
 // Redirect if product doesn't exist
 if (!$product) {
-    header("Location: /finalProj/views/products.php");
+    header("Location: /views/products.php");
     exit();
 }
 
@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["edit_product"])) {
         <div class="alert alert-success">
             <p><?= htmlspecialchars($success) ?></p>
         </div>
-        <a href="/finalProj/views/products.php" class="btn btn-primary">View All Products</a>
+        <a href="/views/products.php" class="btn btn-primary">View All Products</a>
     <?php endif; ?>
 
     <form method="POST" novalidate>
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["edit_product"])) {
 
         <div style="margin-top: 25px; display: flex; gap: 10px; align-items: center;">
             <button type="submit" name="edit_product" class="btn btn-warning" style="margin:0; height:42px;">Update Product</button>
-            <a href="/finalProj/views/products.php" class="btn btn-secondary" style="margin:0; height:42px; display:inline-flex; align-items:center;">Cancel</a>
+            <a href="/views/products.php" class="btn btn-secondary" style="margin:0; height:42px; display:inline-flex; align-items:center;">Cancel</a>
         </div>
     </form>
 </div>

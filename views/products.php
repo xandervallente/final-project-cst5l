@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: /finalProj/index.php");
+    header("Location: /index.php");
     exit();
 }
 
@@ -33,9 +33,9 @@ if ($keyword !== "" || $filter !== "all") {
 
     <div class="products-toolbar">
         <div class="toolbar-left">
-            <a href="/finalProj/views/product-add.php" class="btn btn-success">Add New Product</a>
-            <a href="/finalProj/views/dashboard.php" class="btn btn-secondary">Back to Dashboard</a>
-            <a href="/finalProj/views/export-csv.php" class="btn btn-export" style="background: linear-gradient(135deg, #1a237e, #283593); color: #90caf9; border: 2px solid #5c6bc0;">Export Excel</a>
+            <a href="/views/product-add.php" class="btn btn-success">Add New Product</a>
+            <a href="/views/dashboard.php" class="btn btn-secondary">Back to Dashboard</a>
+            <a href="/views/export-csv.php" class="btn btn-export" style="background: linear-gradient(135deg, #1a237e, #283593); color: #90caf9; border: 2px solid #5c6bc0;">Export Excel</a>
         </div>
 
         <form method="GET" class="search-form" novalidate>
@@ -47,7 +47,7 @@ if ($keyword !== "" || $filter !== "all") {
             </select>
             <button type="submit" class="btn btn-primary">Search</button>
             <?php if ($keyword !== "" || $filter !== "all"): ?>
-                <a href="/finalProj/views/products.php" class="btn btn-secondary">Clear</a>
+                <a href="/views/products.php" class="btn btn-secondary">Clear</a>
             <?php endif; ?>
         </form>
     </div>
@@ -64,9 +64,9 @@ if ($keyword !== "" || $filter !== "all") {
         <div class="alert alert-error" style="margin-top: 20px;">
             <p>No products found.
                 <?php if ($keyword !== "" || $filter !== "all"): ?>
-                    <a href="/finalProj/views/products.php">Clear search</a> or
+                    <a href="/views/products.php">Clear search</a> or
                 <?php endif; ?>
-                <a href="/finalProj/views/product-add.php">Add a new product</a>.
+                <a href="/views/product-add.php">Add a new product</a>.
             </p>
         </div>
     <?php else: ?>
@@ -102,8 +102,8 @@ if ($keyword !== "" || $filter !== "all") {
                                 class="btn btn-primary btn-small"
                                 onclick="openStockModal(<?= $product['id'] ?>, '<?= htmlspecialchars($product['name'], ENT_QUOTES) ?>', <?= $product['quantity'] ?>)"
                             >Adjust Stock</button>
-                            <a href="/finalProj/views/product-edit.php?id=<?= $product['id'] ?>" class="btn btn-warning btn-small">Edit</a>
-                            <a href="/finalProj/views/product-delete.php?id=<?= $product['id'] ?>" class="btn btn-danger btn-small" onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
+                            <a href="/views/product-edit.php?id=<?= $product['id'] ?>" class="btn btn-warning btn-small">Edit</a>
+                            <a href="/views/product-delete.php?id=<?= $product['id'] ?>" class="btn btn-danger btn-small" onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -124,7 +124,7 @@ if ($keyword !== "" || $filter !== "all") {
             <p class="modal-product-name" id="modalProductName"></p>
             <p class="modal-current-qty">Current Quantity: <strong id="modalCurrentQty"></strong></p>
 
-            <form method="POST" action="/finalProj/views/adjust-stock.php" id="stockForm">
+            <form method="POST" action="/views/adjust-stock.php" id="stockForm">
                 <input type="hidden" name="id" id="modalProductId">
 
                 <div class="modal-action-tabs">

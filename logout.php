@@ -6,5 +6,5 @@ session_unset();
 session_destroy();
 
 // Redirect back to login page
-header("Location: /finalProj/index.php");
+header("Location: /index.php");
 exit();

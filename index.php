@@ -7,7 +7,7 @@ session_start();
 
 // Already logged in, go straight to dashboard
 if (isset($_SESSION['user_id'])) {
-    header("Location: /finalProj/views/dashboard.php");
+    header("Location: /views/dashboard.php");
     exit();
 }
 
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["login"])) {
     if (empty($errors)) {
         $controller = new AccountController($SERVER_NAME, $USERNAME, $PASSWORD, $DB_NAME);
         if ($controller->login($form["username"], $password)) {
-            header("Location: /finalProj/views/dashboard.php");
+            header("Location: /views/dashboard.php");
             exit();
         } else {
             $errors[] = "Invalid username or password.";
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["login"])) {
             <button type="submit" name="login">Login</button>
         </form>
 
-        <p class="auth-switch">Don't have an account? <a href="/finalProj/views/register.php">Register here</a></p>
+        <p class="auth-switch">Don't have an account? <a href="/views/register.php">Register here</a></p>
     </div>
 </div>
 

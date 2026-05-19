@@ -3,7 +3,7 @@ session_start();
 
 // Already logged in, go to dashboard
 if (isset($_SESSION['user_id'])) {
-    header("Location: /finalProj/views/dashboard.php");
+    header("Location: /views/dashboard.php");
     exit();
 }
 
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["register"])) {
             <div class="alert alert-success">
                 <p><?= htmlspecialchars($success) ?></p>
             </div>
-            <a href="/finalProj/index.php" class="btn btn-primary" style="width:100%; text-align:center; display:block;">Go to Login</a>
+            <a href="/index.php" class="btn btn-primary" style="width:100%; text-align:center; display:block;">Go to Login</a>
         <?php else: ?>
             <form method="POST" novalidate>
                 <label>Username: <span class="required">*</span></label>
@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["register"])) {
                 <button type="submit" name="register">Create Account</button>
             </form>
 
-            <p class="auth-switch">Already have an account? <a href="/finalProj/index.php">Login here</a></p>
+            <p class="auth-switch">Already have an account? <a href="/index.php">Login here</a></p>
         <?php endif; ?>
     </div>
 </div>

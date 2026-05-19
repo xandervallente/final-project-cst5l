@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: /finalProj/index.php");
+    header("Location: /index.php");
     exit();
 }
 
@@ -27,9 +27,9 @@ $recent     = $controller->getRecent(5);
             <p style="font-size:14px; color:#90a4ae;">Welcome back, <strong style="color:#90caf9;"><?= htmlspecialchars($_SESSION['username']) ?></strong> &mdash; here is your inventory at a glance.</p>
         </div>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a href="/finalProj/views/products.php" class="btn btn-primary">View Products</a>
-            <a href="/finalProj/views/product-add.php" class="btn btn-success">Add Product</a>
-            <a href="/finalProj/logout.php" class="btn btn-danger">Logout</a>
+            <a href="/views/products.php" class="btn btn-primary">View Products</a>
+            <a href="/views/product-add.php" class="btn btn-success">Add Product</a>
+            <a href="/logout.php" class="btn btn-danger">Logout</a>
         </div>
     </div>
 
@@ -116,7 +116,7 @@ $recent     = $controller->getRecent(5);
                                 <td style="padding:10px 12px; font-size:13px; color:#e8eaf6; border-bottom:1px solid rgba(26,58,92,0.4);"><?= htmlspecialchars($item['name']) ?></td>
                                 <td style="padding:10px 12px; font-size:13px; color:#e8eaf6; border-bottom:1px solid rgba(26,58,92,0.4);">&#8369;<?= number_format((float)$item['price'], 2) ?></td>
                                 <td style="padding:10px 12px; font-size:13px; color:#e8eaf6; border-bottom:1px solid rgba(26,58,92,0.4);"><span class="badge badge-warning"><?= $item['quantity'] ?></span></td>
-                                <td style="padding:10px 12px; font-size:13px; color:#e8eaf6; border-bottom:1px solid rgba(26,58,92,0.4);"><a href="/finalProj/views/product-edit.php?id=<?= $item['id'] ?>" class="btn btn-warning btn-small">Restock</a></td>
+                                <td style="padding:10px 12px; font-size:13px; color:#e8eaf6; border-bottom:1px solid rgba(26,58,92,0.4);"><a href="/views/product-edit.php?id=<?= $item['id'] ?>" class="btn btn-warning btn-small">Restock</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -135,7 +135,7 @@ $recent     = $controller->getRecent(5);
             </div>
             <?php if (empty($recent)): ?>
                 <div style="padding:30px 20px; text-align:center; color:#90a4ae; font-size:14px;">
-                    <p>No products yet. <a href="/finalProj/views/product-add.php" style="color:#64b5f6;">Add one now</a>.</p>
+                    <p>No products yet. <a href="/views/product-add.php" style="color:#64b5f6;">Add one now</a>.</p>
                 </div>
             <?php else: ?>
                 <table style="width:100%; border-collapse:collapse;">
@@ -159,7 +159,7 @@ $recent     = $controller->getRecent(5);
                                         <span class="badge badge-danger">0</span>
                                     <?php endif; ?>
                                 </td>
-                                <td style="padding:10px 12px; font-size:13px; color:#e8eaf6; border-bottom:1px solid rgba(26,58,92,0.4);"><a href="/finalProj/views/product-edit.php?id=<?= $item['id'] ?>" class="btn btn-warning btn-small">Edit</a></td>
+                                <td style="padding:10px 12px; font-size:13px; color:#e8eaf6; border-bottom:1px solid rgba(26,58,92,0.4);"><a href="/views/product-edit.php?id=<?= $item['id'] ?>" class="btn btn-warning btn-small">Edit</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

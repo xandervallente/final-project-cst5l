@@ -24,9 +24,9 @@ header('Expires: 0');
 function xesc($str) {
     return htmlspecialchars($str, ENT_QUOTES | ENT_XML1, 'UTF-8');
 }
+echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+echo '<?mso-application progid="Excel.Sheet"?>' . "\n";
 ?>
-<?xml version="1.0" encoding="UTF-8"?>
-<?mso-application progid="Excel.Sheet"?>
 <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
           xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
           xmlns:x="urn:schemas-microsoft-com:office:excel"
